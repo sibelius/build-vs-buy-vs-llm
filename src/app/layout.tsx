@@ -3,15 +3,18 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { Console } from "@/components/Console";
 import { MobileNav, Sidebar } from "@/components/Sidebar";
 import { DecisionProvider } from "@/lib/decision";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/og";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const mono = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Build vs Buy vs LLM, visualized",
-  description:
-    "Interactive visualizations of the build vs buy vs LLM decision: pros, cons, cost curves, and how AI shifts the weights.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  openGraph: { title: SITE_NAME, description: SITE_DESCRIPTION, url: "/", siteName: SITE_NAME, type: "website", locale: "en_US" },
+  twitter: { card: "summary_large_image", title: SITE_NAME, description: SITE_DESCRIPTION },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

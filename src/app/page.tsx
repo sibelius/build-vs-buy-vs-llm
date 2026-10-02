@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { APPROACHES, ORDER } from "@/lib/content";
 import { NAV } from "@/lib/nav";
+import { pageMetadata } from "@/lib/og";
+
+export const metadata = pageMetadata("/");
 
 const LANES = [
   { id: "build", y: 40, pay: "engineer-months", what: "code you own", run: "your infra, your on-call", href: "/build" },

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/og";
 import { CostChart } from "./CostChart";
 
-export const metadata: Metadata = { title: "Cost over time · Build vs Buy vs LLM" };
+export const metadata: Metadata = pageMetadata("/cost");
 
 export default function Page() {
   return <CostChart />;
